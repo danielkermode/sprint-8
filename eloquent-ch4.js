@@ -136,7 +136,7 @@ function deepEqual(obj1, obj2) {
     if(typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
       res = deepEqual(obj1[key], obj2[key]);
     } else {
-      if(obj1[key] !== obj2[key]) res = false;
+      if(obj1[key] != obj2[key]) res = false;
     }
   }
   return res;
