@@ -139,14 +139,3 @@ function deepEqual(obj1, obj2) {
   }
   return res;
 }
-
-var obj1 = {
-  asd: {},
-  asdd: 2
-}
-
-var obj2 = {
-  asd: {},
-  asdd: 2,
-  asddd: 3
-}
