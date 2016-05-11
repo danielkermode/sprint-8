@@ -10,10 +10,7 @@ function range(first, last, step) {
   }
   var arr = [];
   function ranger(current) {
-    if(current >= last && dir >= 1) {
-      if(current === last) arr.push(last);
-      return arr;
-    } else if(current <= last && dir === -1) {
+    if((current >= last && dir >= 1) || (current <= last && dir === -1)) {
       if(current === last) arr.push(last);
       return arr;
     }
@@ -132,6 +129,7 @@ function nthRecursive(list, ind) {
 /***Deep Comparison***/
 function deepEqual(obj1, obj2) {
   var res = true;
+  if(Object.keys(obj1).length != Object.keys(obj2).length) return false;
   for(var key in obj1) {
     if(typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
       res = deepEqual(obj1[key], obj2[key]);
@@ -140,4 +138,15 @@ function deepEqual(obj1, obj2) {
     }
   }
   return res;
+}
+
+var obj1 = {
+  asd: {},
+  asdd: 2
+}
+
+var obj2 = {
+  asd: {},
+  asdd: 2,
+  asddd: 3
 }
